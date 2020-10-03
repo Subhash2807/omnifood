@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vanilla JS Clock</title>
+  <style>
+    body {
+      background: linear-gradient(270deg, rgba(62, 132, 160, 0.774), rgba(62, 132, 160, 0.7), rgba(62, 132, 160, 0.55), rgba(62, 132, 160, 0.30), transparent);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="all">Time now is <b><i class="inner"></i></b></div>
+  but the restraunt opens between 9:00 AM and 5:00 PM
+</body>
+<script>
+  setInterval(function () {
+    var date = new Date();
+    var p = date.getHours();
+    var q = date.getMinutes();
+    var r = date.getSeconds();
+    // var s=date.
+    var b = document.querySelector('.inner');
+    if (p < 10)
+      p = '0' + p;
+    if (q < 10)
+      q = '0' + q;
+    if (r < 10)
+      r = '0' + r;
+    // b.textContent = p + ':' + q + ':' + r;
+    b.textContent = date;
+  }, 1000);
+</script>
+
+</html>
